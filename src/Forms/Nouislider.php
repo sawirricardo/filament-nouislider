@@ -3,20 +3,20 @@
 namespace Sawirricardo\FilamentNouislider\Forms;
 
 use Closure;
-use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Concerns;
 use Filament\Forms\Components\Contracts;
+use Filament\Forms\Components\Field;
 use Filament\Support\Concerns\HasExtraAlpineAttributes;
 use Sawirricardo\FilamentNouislider\Enums\NouisliderBehaviour;
 
 class Nouislider extends Field implements Contracts\HasAffixActions
 {
-    use Concerns\HasStep;
     use Concerns\CanBeDisabled;
     use Concerns\CanBeHidden;
     use Concerns\CanBeValidated;
-    use Concerns\HasExtraInputAttributes;
     use Concerns\HasAffixes;
+    use Concerns\HasExtraInputAttributes;
+    use Concerns\HasStep;
     use HasExtraAlpineAttributes;
 
     protected array | Closure | null $start = null;

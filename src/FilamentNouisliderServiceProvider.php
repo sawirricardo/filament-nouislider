@@ -5,16 +5,14 @@ namespace Sawirricardo\FilamentNouislider;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
-use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
+use Sawirricardo\FilamentNouislider\Testing\TestsFilamentNouislider;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Sawirricardo\FilamentNouislider\Commands\FilamentNouisliderCommand;
-use Sawirricardo\FilamentNouislider\Testing\TestsFilamentNouislider;
 
 class FilamentNouisliderServiceProvider extends PackageServiceProvider
 {
