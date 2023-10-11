@@ -5,9 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/sawirricardo/filament-nouislider/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/sawirricardo/filament-nouislider/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/sawirricardo/filament-nouislider.svg?style=flat-square)](https://packagist.org/packages/sawirricardo/filament-nouislider)
 
-
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Use NoUiSlider
 
 ## Installation
 
@@ -15,13 +13,6 @@ You can install the package via composer:
 
 ```bash
 composer require sawirricardo/filament-nouislider
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="filament-nouislider-migrations"
-php artisan migrate
 ```
 
 You can publish the config file with:
@@ -46,8 +37,16 @@ return [
 ## Usage
 
 ```php
-$filamentNouislider = new Sawirricardo\FilamentNouislider();
-echo $filamentNouislider->echoPhrase('Hello, Sawirricardo!');
+use Sawirricardo\FilamentNouislider\Forms\Components\Nouislider;
+$form->schema([
+    Nouislider::make('my_slider')
+        ->live()
+        ->start([5, 8])
+        ->minValue(0)
+        ->maxValue(10)
+        ->step(1)
+        ->connect(),
+]);
 ```
 
 ## Testing
