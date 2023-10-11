@@ -43,8 +43,14 @@ const defaultOptions = {
     }],
 }
 
+// compile({
+//     ...defaultOptions,
+//     entryPoints: ['./resources/js/index.js'],
+//     outfile: './resources/dist/filament-nouislider.js',
+// })
+
 compile({
     ...defaultOptions,
-    entryPoints: ['./resources/js/index.js'],
-    outfile: './resources/dist/skeleton.js',
+    entryPoints: [`./resources/js/components/nouislider.js`],
+    outfile: `./resources/dist/components/nouislider.js`,
 })
