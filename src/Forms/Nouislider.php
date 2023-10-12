@@ -8,6 +8,7 @@ use Filament\Forms\Components\Contracts;
 use Filament\Forms\Components\Field;
 use Filament\Support\Concerns\HasExtraAlpineAttributes;
 use Sawirricardo\FilamentNouislider\Enums\NouisliderBehaviour;
+use Sawirricardo\FilamentNouislider\Enums\NouisliderPipsMode;
 
 class Nouislider extends Field implements Contracts\HasAffixActions
 {
@@ -61,6 +62,18 @@ class Nouislider extends Field implements Contracts\HasAffixActions
      * @var view-string
      */
     protected string $view = 'filament-nouislider::forms.components.nouislider';
+
+    public function pips(NouisliderPipsMode|Closure $mode, int|Closure $density, int|array|null|Closure $values, bool|null|Closure $stepped = null)
+    {
+        $this->pips = [
+            'mode' => $this->evaluate($mode)->value,
+            'values' => $this->evaluate($values),
+            'density' => $this->evaluate($density),
+            'stepped' => $this->evaluate($stepped),
+        ];
+
+        return $this;
+    }
 
     public function snap($value = true)
     {
