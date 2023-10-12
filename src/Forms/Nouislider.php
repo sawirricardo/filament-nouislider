@@ -132,7 +132,7 @@ class Nouislider extends Field implements Contracts\HasAffixActions
         return $this;
     }
 
-    public function tooltips($value): static
+    public function tooltips($value = true): static
     {
         $this->tooltips = $value;
 
