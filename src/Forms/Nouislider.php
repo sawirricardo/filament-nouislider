@@ -58,6 +58,8 @@ class Nouislider extends Field implements Contracts\HasAffixActions
      */
     protected $minValue = null;
 
+    protected bool | Closure | null $tooltips = false;
+
     /**
      * @var view-string
      */
@@ -130,6 +132,13 @@ class Nouislider extends Field implements Contracts\HasAffixActions
         return $this;
     }
 
+    public function tooltips($value): static
+    {
+        $this->tooltips = $value;
+
+        return $this;
+    }
+
     public function orientation($value)
     {
         $this->orientation = $value;
@@ -161,6 +170,11 @@ class Nouislider extends Field implements Contracts\HasAffixActions
     public function getMinValue()
     {
         return $this->evaluate($this->minValue);
+    }
+
+    public function getTooltips()
+    {
+        return $this->evaluate($this->tooltips);
     }
 
     public function getSnap()
@@ -260,6 +274,7 @@ class Nouislider extends Field implements Contracts\HasAffixActions
             'animate' => $this->getAnimate(),
             'animationDuration' => $this->getAnimationDuration(),
             'cssPrefix' => $this->getCssPrefix(),
+            'tooltips' => $this->getTooltips(),
         ];
     }
 }
