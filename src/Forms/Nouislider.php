@@ -63,7 +63,7 @@ class Nouislider extends Field implements Contracts\HasAffixActions
      */
     protected string $view = 'filament-nouislider::forms.components.nouislider';
 
-    public function pips(NouisliderPipsMode|Closure $mode, int|Closure $density, int|array|null|Closure $values, bool|null|Closure $stepped = null)
+    public function pips(NouisliderPipsMode | Closure $mode, int | Closure $density, int | array | null | Closure $values, bool | Closure $stepped = null)
     {
         $this->pips = [
             'mode' => $this->evaluate($mode)->value,
